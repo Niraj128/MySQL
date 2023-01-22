@@ -1,0 +1,35 @@
+SHOW DATABASES;
+
+DROP DATABASE sql_practice;
+
+SELECT DATABASE();
+
+
+CREATE DATABASE sql_practice;
+USE sql_practice;
+
+CREATE TABLE students(
+
+    id INT NOT NULL,
+    fname VARCHAR(50),
+    mname VARCHAR(50),
+    lname VARCHAR(50),
+    city VARCHAR(50),
+    salary INT
+    
+);
+
+SHOW TABLES;
+DESCRIBE students;
+
+DROP TABLE students;
+
+INSERT INTO students VALUES (1,'Niraj','Kumar','Shrivastav','Noida',1000);
+INSERT INTO students VALUES (2,'Dheeraj','Kumar','Shrivastav','Gorakhpur',3000);
+INSERT INTO students VALUES (3,'Shashi','Ranjan','Kumar','Hoshiarpur',4000);
+INSERT INTO students VALUES (4,'Ravi','Ranjan','Kumar','Delhi',1000);
+INSERT INTO students VALUES (5,'Vivek','Kumar','Shrivastav','Lucknow',1000);
+INSERT INTO students VALUES (6,'Rahul','Kumar','Shrivastav','Gorakhpur',1000);
+INSERT INTO students VALUES (7,'Rohit','Kumar','Shrivastav','Gorakhpur',1000);
+
+SELECT * FROM students;
