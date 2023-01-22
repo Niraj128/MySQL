@@ -1,0 +1,70 @@
+CRUD Operations
+
+CREATE - INSERT Statement
+READ - SELECT Statement
+UPDATE - UPDATE Statement 
+DELETE - DELETE Statement
+
+# Creation of TABLE and INSERT Statement
+
+employee TABLE
+you prefer to hire from banglore location
+
+CREATE TABLE employee(
+firstname VARCHAR(20),
+middlename VARCHAR(20),
+lastname VARCHAR(20),
+age INT,
+salary INT,
+location VARCHAR(20)
+);
+
+SELECT * FROM employee;
+
+INSERT INTO employee VALUES ('KAPIL','KUMAR','SHARMA',28,1000,'BANGLORE');
+
+INSERT INTO employee (firstname,middlename,lastname,age,salary,location)VALUES ('SATISH','KUMAR','SHARMA',28,1000,'BANGLORE');
+
+INSERT INTO employee (firstname,lastname,age,salary,location) VALUES ('RAJESH','KUMAR',30,20000,'BANGLORE');
+
+INSERT INTO employee (firstname,middlename,lastname,age,salary,location)VALUES ('SATISH','KUMAR','SHARMA',28,1000,'BANGLORE');
+
+NULL
+==========
+
+CREATE TABLE employee(
+firstname VARCHAR(20) NOT NULL,
+middlename VARCHAR(20),
+lastname VARCHAR(20) NOT NULL,
+age INT NOT NULL,
+salary INT NOT NULL,
+location VARCHAR(20) NOT NULL
+);
+
+DEFAULT VALUES
+=================
+
+CREATE TABLE employee(
+firstname VARCHAR(20) NOT NULL,
+middlename VARCHAR(20),
+lastname VARCHAR(20) NOT NULL,
+age INT NOT NULL,
+salary INT NOT NULL,
+location VARCHAR(20) NOT NULL DEFAULT 'banglore'
+);
+
+
+INSERT INTO employee (firstname,lastname,age,salary)VALUES ('SATISH','SHARMA',28,1000);
+
+INSERT INTO employee (firstname,lastname,age,salary,location)VALUES ('SATISH','SHARMA',28,1000,'delhi');
+
+INSERT INTO employee (firstname,lastname,age,salary,location)VALUES ('RAJESH','SHARMA',28,1000,NULL); ---> MANUALLY WE CANNOT SET AS NULL
+
+CRUD Operations
+Simple INSERT
+Multiple INSERT
+datatype mismatched
+NULL and NOT NULL
+DEFAULT VALUES
+combination of NOT NULL and DEFAULT
+
