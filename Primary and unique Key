@@ -1,0 +1,90 @@
+PRIMARY KEY
+AUTO INCREMENT KEYS
+UNIQUE KEY
+PRIMARY KEY VS UNIQUE KEY
+
+============================================
+
+PRIMARY KEY CONSTARINTS
+==========================
+
+-Uniquely identify each record in the TABLE
+-for a PRIMARY KEY NULL is not allowed.
+-for a PRIMARY key duplicate value is also not allowed.
+
+first way
+-------------
+CREATE TABLE employee(
+id INT PRIMARY KEY,
+firstname VARCHAR(20) NOT NULL,
+middlename VARCHAR(20),
+lastname VARCHAR(20) NOT NULL,
+age INT NOT NULL,
+salary INT NOT NULL,
+location VARCHAR(20) NOT NULL DEFAULT 'banglore'
+);
+
+another way
+-------------
+CREATE TABLE employee(
+id INT,
+firstname VARCHAR(20) NOT NULL,
+middlename VARCHAR(20),
+lastname VARCHAR(20) NOT NULL,
+age INT NOT NULL,
+salary INT NOT NULL,
+location VARCHAR(20) NOT NULL DEFAULT 'banglore'
+PRIMARY KEY(id)
+);
+
+INSERT INTO employee (id,firstname,lastname,age,salary)VALUES (1,'SATISH','SHARMA',28,1000);
+
+AUTO_INCREMENT
+==================
+
+CREATE TABLE employee(
+id INT AUTO_INCREMENT,
+firstname VARCHAR(20) NOT NULL,
+middlename VARCHAR(20),
+lastname VARCHAR(20) NOT NULL,
+age INT NOT NULL,
+salary INT NOT NULL,
+location VARCHAR(20) NOT NULL DEFAULT 'banglore',
+PRIMARY KEY(id)
+);
+
+INSERT INTO employee (firstname,lastname,age,salary)VALUES ('KAPIL','SHARMA',28,1000);
+
+UNIQUE KEYS
+===================
+
+-YOU can have only one PRIMARY key
+-PRIMARY key CANNOT hold any Null VALUES
+-we should use PRIMARY key when we have to uniquely identify each records.
+
+-UNIQUE key can hold Null
+-in My Sql a UNIQUE KEYS can hold any number of Null VALUES
+-in some another famous DB's a UNIQUE KEYS can hold only one Null VALUES'
+
+-the purpose of unique key is to make sure the values do not duplicate.
+-we can have only PRIMARY key but multiole unique KEYS in a TABLE.
+
+CREATE TABLE employee(
+firstname VARCHAR(20) NOT NULL,
+lastname VARCHAR(20) NOT NULL,
+age INT NOT NULL,
+PRIMARY KEY (firstname,lastname)
+);
+
+INSERT INTO employee VALUES ('kapil','sharma',28);
+
+
+CREATE TABLE employee(
+id INT UNIQUE KEY,
+firstname VARCHAR(20) ,
+lastname VARCHAR(20) ,
+age INT NOT NULL
+);
+
+INSERT INTO employee VALUES (1,'Niraj','Kumar',32);
+INSERT INTO employee VALUES (NULL,'Niraj','Kumar',32);
