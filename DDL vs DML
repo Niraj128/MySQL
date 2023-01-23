@@ -1,0 +1,85 @@
+CREATE TABLE employee(
+id INT,
+firstname VARCHAR(20) NOT NULL,
+middlename VARCHAR(20),
+lastname VARCHAR(20) NOT NULL,
+age INT NOT NULL,
+salary INT NOT NULL,
+location VARCHAR(20) NOT NULL DEFAULT 'banglore',
+PRIMARY KEY(id)
+);
+
+INSERT INTO employee (id,firstname,lastname,age,salary)VALUES (1,'SATISH','SHARMA',28,1000);
+INSERT INTO employee (id,firstname,lastname,age,salary)VALUES (2,'KAPIL','SHARMA',18,5000);
+INSERT INTO employee (id,firstname,lastname,age,salary)VALUES (3,'MANOJ','KUMAR',26,4000);
+
+SELECT
+===============
+
+SELECT * FROM   employee;
+
+-selecting some column
+SELECT firstname,lastname FROM employee; 
+
+-select by filer condtion (WHERE clause)
+SELECT * FROM employee WHERE age >25;
+
+## By DEFAULT it is case sensitive
+SELECT * FROM employee WHERE firstname = 'kapil';
+
+SELECT * FROM employee WHERE BINARY firstname = 'KAPIL';
+
+The above statement will match exact case and is case sensitive.
+
+## Alias
+SELECT firstname as name,lastname as surname FROM employee;
+
+UPDATE
+=============
+
+UPDATE employee SET lastname = 'sinha' WHERE firstname ='manoj';
+UPDATE employee SET location = 'hyderabad' WHERE firstname ='kapil';
+UPDATE employee SET location = 'hyderabad';
+UPDATE employee SET salary =salary + 5000;
+
+UPDATE employee SET location = 'banglore' where firstname = 'manoj' and lastname = 'sinha';
+
+DELETE
+===========
+
+DELETE FROM employee where id =3;
+DELETE FROM employee;
+
+ALTER COMMAND
+================
+
+Alter is to alter the structure of the table (schema)
+
+ALTER TABLE employee ADD COLUMN jobtiltle VARCHAR(50);
+
+ALTER TABLE employee DROP COLUMN jobtiltle ;
+
+ALTER TABLE employee MODIFY COLUMN firstname VARCHAR(30);
+
+ALTER TABLE employee DROP PRIMARY KEY;
+
+ALTER TABLE employee ADD PRIMARY KEY (id);
+
+
+DDL VS DML
+==============
+DDL - DATA DEFINITION LANGUAGE
+- Deals with table structure
+
+CREATE, ALTER, DROP, TRUNCATE
+
+
+DML - DATA MANIPULATION LANGUAGE
+- Deal with the DATA directly
+
+INSERT, UPDATE, DELETE
+
+
+TRUNCATE TABLE employee;
+- TRUNCATE also remove all the records - DDL
+- TRUNCATE internally drops the TABLE and recretae it.
